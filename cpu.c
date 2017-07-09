@@ -51,7 +51,7 @@ void cpu_rdtsc() {
 	unsigned long long avg = 0;
 	for (i = 0; i < 10; i++) {
 		avg = avg + rdtsc_diff();
-		usleep(5000);
+		usleep(500000);
 	}
 	avg = avg / 10;
 	cpu_tsc_avg.avg = avg;
@@ -64,7 +64,7 @@ void cpu_rdtsc_force_vmexit() {
 	unsigned long long avg = 0;
 	for (i = 0; i < 10; i++) {
 		avg = avg + rdtsc_diff_vmexit();
-		usleep(5000);
+		usleep(500000);
 	}
 	avg = avg / 10;
 	cpu_tsc_avg.vmexit_avg = avg;
